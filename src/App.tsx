@@ -22,7 +22,7 @@ interface WeatherData {
 
 export function App() {
 
-    const apiKey = '8928bf3329316b292ce1b09e64d54b67'
+    const apiKey = import.meta.env.VITE_API_KEY as string;
 
     const [city, setCity] = useState<string>('');
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
@@ -43,8 +43,8 @@ export function App() {
 
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen text-zinc-300">
-      <div className="bg-zinc-800 p-4 rounded-lg shadow-md items-center">
+    <div className="flex flex-col justify-center items-center h-screen text-zinc-300 bg-zinc-900">
+      <div className="bg-zinc-800 p-4 rounded-xl shadow-md items-center">
         <h3 className="text-xl font-semibold mb-4 text-center">Eu e noely vamos para:</h3>
         <div className="flex items-center mb-4">
           <input 
